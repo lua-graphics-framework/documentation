@@ -23,22 +23,22 @@ Create a new Lua source file (main.lua) inside the `scripts` folder.
 Insert the following contents:
 
 ```lua
-require("lgf.lgf")
+require("lgf.lgf") -- Require LGF
 
-local window = LGF.Window.create("Hello LGF!", 1280, 720)
-window:sync(60)
+local window = LGF.Window.create("Hello LGF!", 1280, 720) -- Create the window
+window:sync(60) -- Set the FPS limit
 
-local renderer = LGF.Renderer.new()
-renderer:changeColorRGB(0, 0, 0)
+local renderer = LGF.Renderer.new() -- Create the renderer
+renderer:changeColorRGB(0, 0, 0) -- Change the renderer's color
 
-while window:active() do
-  renderer:clearScreen()
-  renderer:render()
+while window:active() do -- While the window is open
+  renderer:clearScreen() -- Clear the renderer's screen
+  renderer:render() -- Render everything
 
-  window:update()
+  window:update() -- Poll events
 end
 
-window:close()
+window:close() -- Close the window
 ```
 
 We will go through this file line by line.
